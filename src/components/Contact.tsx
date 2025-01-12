@@ -26,7 +26,7 @@ export default function Contact() {
       icon: <Linkedin className="w-6 h-6" />,
       label: 'LinkedIn',
       value: 'Narendra Kumar',
-      href: 'https://linkedin.com/in/narendra-kumar',
+      href: 'https://www.linkedin.com/in/narendra-kumar-613623212/',
     },
     {
       icon: <Github className="w-6 h-6" />,
