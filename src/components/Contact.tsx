@@ -54,7 +54,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium">LinkedIn</p>
-                  <p className="text-muted-foreground">linkedin.com/in/narendrakumar</p>
+                  <a href="https://www.linkedin.com/in/naren487/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:underline">
+                    linkedin.com/in/naren487
+                  </a>
                 </div>
               </div>
               
@@ -64,7 +66,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-medium">GitHub</p>
-                  <p className="text-muted-foreground">github.com/GitHubNarendraKumar</p>
+                  <a href="https://github.com/Naren-18" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:underline">
+                    github.com/Naren-18
+                  </a>
                 </div>
               </div>
             </div>

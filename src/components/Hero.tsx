@@ -55,9 +55,11 @@ const Hero = () => {
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
            
-            <Button  size="lg" className="shadow-glow text-lg px-8 py-3">
-              <Download className="mr-2 h-5 w-5" />
-              View My Resume
+            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-3">
+              <a href="/src/assets/Narendra Kumar.pdf" target="_blank" rel="noopener noreferrer">
+                <Download className="mr-2 h-5 w-5" />
+                View My Resume
+              </a>
             </Button>
             <Button asChild variant="outline" size="lg" className="text-lg px-8 py-3 border-primary text-primary hover:bg-primary/10 flex items-center">
               <a href="https://www.instagram.com/devcraftr_/" target="_blank" rel="noopener noreferrer" className="flex items-center">
@@ -70,12 +72,16 @@ const Hero = () => {
           </div>
           
           {/* Social Links */}
-          <div className="flex justify-center space-x-6 pt-6">
-            <Button variant="ghost" size="icon" className="hover:shadow-glow hover:scale-110 transition-all">
-              <Github className="h-6 w-6" />
+          <div className="flex justify-center space-x-6 ">
+            <Button asChild variant="ghost" size="icon" className="hover:shadow-glow hover:scale-110 transition-all">
+              <a href="https://github.com/Naren-18" target="_blank" rel="noopener noreferrer">
+                <Github className="h-6 w-6" />
+              </a>
             </Button>
-            <Button variant="ghost" size="icon" className="hover:shadow-glow hover:scale-110 transition-all">
-              <Linkedin className="h-6 w-6" />
+            <Button asChild variant="ghost" size="icon" className="hover:shadow-glow hover:scale-110 transition-all">
+              <a href="https://www.linkedin.com/in/naren487/" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="h-6 w-6" />
+              </a>
             </Button>
           </div>
           
