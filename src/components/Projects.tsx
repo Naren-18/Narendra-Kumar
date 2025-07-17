@@ -7,6 +7,7 @@ import corfusionImg from "@/assets/corfusion.png";
 import resultAnalysisImg from "@/assets/result analysis.png";
 import studentActivityImg from "@/assets/student activity manager.png";
 import techfestImg from "@/assets/techfest.png";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -95,7 +96,13 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="py-20 px-6 bg-gradient-secondary">
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="py-20 px-6 bg-gradient-secondary"
+    >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
@@ -106,83 +113,91 @@ const Projects = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <Card key={index} className="bg-card border-border hover:shadow-card transition-all duration-300 group overflow-hidden h-full flex flex-col p-3">
-              <div className="relative overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-105 rounded-md"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              
-              <CardHeader className="flex-grow p-2 pb-0">
-                <CardTitle className="text-lg text-primary mb-1">{project.title}</CardTitle>
-                <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
-              </CardHeader>
-              
-              <CardContent className="pt-0 p-2">
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {project.technologies.map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="secondary" className="text-xs px-2 py-1">
-                      {tech}
-                    </Badge>
-                  ))}
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <Card key={index} className="bg-card border-border hover:shadow-card transition-all duration-300 group overflow-hidden h-full flex flex-col p-3">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-105 rounded-md"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <div className="flex gap-2">
-                  {project.title === "MyMoviePlan (Full Stack Movie Management)" ? (
-                    <>
+                
+                <CardHeader className="flex-grow p-2 pb-0">
+                  <CardTitle className="text-lg text-primary mb-1">{project.title}</CardTitle>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
+                </CardHeader>
+                
+                <CardContent className="pt-0 p-2">
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {project.technologies.map((tech, techIndex) => (
+                      <Badge key={techIndex} variant="secondary" className="text-xs px-2 py-1">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                  <div className="flex gap-2">
+                    {project.title === "MyMoviePlan (Full Stack Movie Management)" ? (
+                      <>
+                        <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
+                          <a href="https://github.com/Naren-18/MyMoviePlan-FrontEnd" target="_blank" rel="noopener noreferrer">
+                            <Github className="mr-2 h-4 w-4" />
+                            Frontend Code
+                          </a>
+                        </Button>
+                        <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
+                          <a href="https://github.com/Naren-18/MyMoviePlan-Backend" target="_blank" rel="noopener noreferrer">
+                            <Github className="mr-2 h-4 w-4" />
+                            Backend Code
+                          </a>
+                        </Button>
+                      </>
+                    ) : project.title === "Medicare Platform" ? (
+                      <>
+                        <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
+                          <a href="https://github.com/Naren-18/Medicare-FrontEnd" target="_blank" rel="noopener noreferrer">
+                            <Github className="mr-2 h-4 w-4" />
+                            Frontend Code
+                          </a>
+                        </Button>
+                        <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
+                          <a href="https://github.com/Naren-18/Medicare-Backend" target="_blank" rel="noopener noreferrer">
+                            <Github className="mr-2 h-4 w-4" />
+                            Backend Code
+                          </a>
+                        </Button>
+                      </>
+                    ) : (
                       <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
-                        <a href="https://github.com/Naren-18/MyMoviePlan-FrontEnd" target="_blank" rel="noopener noreferrer">
+                        <a href={project.links.github} target="_blank" rel="noopener noreferrer">
                           <Github className="mr-2 h-4 w-4" />
-                          Frontend Code
+                          Code
                         </a>
                       </Button>
-                      <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
-                        <a href="https://github.com/Naren-18/MyMoviePlan-Backend" target="_blank" rel="noopener noreferrer">
-                          <Github className="mr-2 h-4 w-4" />
-                          Backend Code
+                    )}
+                    {project.links.live && project.links.live !== "#" && (
+                      <Button asChild size="sm" className="flex-1 text-xs px-2 py-1">
+                        <a href={project.links.live} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          Live Demo
                         </a>
                       </Button>
-                    </>
-                  ) : project.title === "Medicare Platform" ? (
-                    <>
-                      <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
-                        <a href="https://github.com/Naren-18/Medicare-FrontEnd" target="_blank" rel="noopener noreferrer">
-                          <Github className="mr-2 h-4 w-4" />
-                          Frontend Code
-                        </a>
-                      </Button>
-                      <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
-                        <a href="https://github.com/Naren-18/Medicare-Backend" target="_blank" rel="noopener noreferrer">
-                          <Github className="mr-2 h-4 w-4" />
-                          Backend Code
-                        </a>
-                      </Button>
-                    </>
-                  ) : (
-                    <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
-                      <a href={project.links.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-4 w-4" />
-                        Code
-                      </a>
-                    </Button>
-                  )}
-                  {project.links.live && project.links.live !== "#" && (
-                    <Button asChild size="sm" className="flex-1 text-xs px-2 py-1">
-                      <a href={project.links.live} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Live Demo
-                      </a>
-                    </Button>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

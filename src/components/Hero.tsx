@@ -2,10 +2,17 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Download, Mail, Github, Linkedin } from "lucide-react";
 import heroImage from "@/assets/hero-image.png";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="pt-24  min-h-[80vh] md:min-h-screen flex items-center justify-center px-6 py-10 md:py-20 relative overflow-hidden">
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="pt-24 md:pt-40 min-h-[80vh] md:min-h-screen flex items-center justify-center px-6 py-10 md:py-20 relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
@@ -89,7 +96,7 @@ const Hero = () => {
           
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -5,6 +5,7 @@ import { FaJava, FaPython, FaPhp, FaReact, FaNodeJs, FaAws, FaDocker, FaGithub, 
 import { SiJavascript, SiDart, SiMysql, SiPostgresql, SiFirebase, SiSpring, SiFlutter, SiVisualstudiocode, SiEclipseide } from "react-icons/si";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { FaCode } from "react-icons/fa"; // as a fallback for VS Code
+import { motion } from "framer-motion";
 
 const skillCategories = [
   {
@@ -85,7 +86,13 @@ const skillIcons: Record<string, React.ReactNode> = {
 
 const Skills = () => {
   return (
-    <section className="py-20 px-6">
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="py-20 px-6"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Skills & Technologies</h2>
@@ -96,62 +103,70 @@ const Skills = () => {
         
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 items-stretch">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="group bg-card border-border hover:shadow-glow transition-all duration-500 hover:scale-105 relative overflow-hidden h-full flex flex-col">
-              {/* Background Gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-              
-              <CardContent className="p-6 relative z-10 flex flex-col h-full">
-                {/* Icon and Title */}
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-primary/20 rounded-lg blur-lg group-hover:bg-primary/30 transition-colors"></div>
-                    <div className="relative p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                      <category.icon className={`h-6 w-6 ${category.iconColor} group-hover:text-primary transition-colors`} />
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <Card className="group bg-card border-border hover:shadow-glow transition-all duration-500 hover:scale-105 relative overflow-hidden h-full flex flex-col">
+                {/* Background Gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                
+                <CardContent className="p-6 relative z-10 flex flex-col h-full">
+                  {/* Icon and Title */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-primary/20 rounded-lg blur-lg group-hover:bg-primary/30 transition-colors"></div>
+                      <div className="relative p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                        <category.icon className={`h-6 w-6 ${category.iconColor} group-hover:text-primary transition-colors`} />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
+                        {category.title}
+                      </h3>
                     </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
-                      {category.title}
-                    </h3>
-                  </div>
-                </div>
-                
-                {/* Skills Grid - flex-grow to push footer down */}
-                <div className="grid grid-cols-2 gap-3 flex-grow">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div
-                      key={skillIndex}
-                      className="group/skill"
-                    >
-                      <Badge 
-                        variant="secondary" 
-                        className="w-full justify-center py-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default text-xs group-hover:shadow-sm"
+                  
+                  {/* Skills Grid - flex-grow to push footer down */}
+                  <div className="grid grid-cols-2 gap-3 flex-grow">
+                    {category.skills.map((skill, skillIndex) => (
+                      <div
+                        key={skillIndex}
+                        className="group/skill"
                       >
-                        {skillIcons[skill] || null}
-                        {skill}
-                      </Badge>
-                    </div>
-                  ))}
-                </div>
-                
-                {/* Skill Count - Always at bottom */}
-                <div className="flex items-center justify-between mt-6 pt-4 border-t border-border/50">
-                  <span className="text-sm text-muted-foreground">
-                    {category.skills.length} skills
-                  </span>
-                  <div className="flex space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <div 
-                        key={i} 
-                        className={`w-2 h-2 rounded-full ${
-                          i < 4 ? 'bg-primary' : 'bg-muted'
-                        } group-hover:bg-primary transition-colors delay-${i * 100}`}
-                      ></div>
+                        <Badge 
+                          variant="secondary" 
+                          className="w-full justify-center py-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default text-xs group-hover:shadow-sm"
+                        >
+                          {skillIcons[skill] || null}
+                          {skill}
+                        </Badge>
+                      </div>
                     ))}
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                  
+                  {/* Skill Count - Always at bottom */}
+                  <div className="flex items-center justify-between mt-6 pt-4 border-t border-border/50">
+                    <span className="text-sm text-muted-foreground">
+                      {category.skills.length} skills
+                    </span>
+                    <div className="flex space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <div 
+                          key={i} 
+                          className={`w-2 h-2 rounded-full ${
+                            i < 4 ? 'bg-primary' : 'bg-muted'
+                          } group-hover:bg-primary transition-colors delay-${i * 100}`}
+                        ></div>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
         
@@ -175,7 +190,7 @@ const Skills = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
