@@ -5,7 +5,7 @@ import heroImage from "@/assets/hero-image.png";
 
 const Hero = () => {
   return (
-    <section className="pt-16 md:pt-0 min-h-[80vh] md:min-h-screen flex items-center justify-center px-6 py-10 md:py-20 relative overflow-hidden">
+    <section className="pt-24  min-h-[80vh] md:min-h-screen flex items-center justify-center px-6 py-10 md:py-20 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5"></div>
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
