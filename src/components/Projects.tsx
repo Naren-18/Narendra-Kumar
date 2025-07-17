@@ -8,6 +8,26 @@ import resultAnalyticsProject from "@/assets/result-analytics-project.jpg";
 
 const projects = [
   {
+    title: "Medicare Platform",
+    description: "Healthcare web application enabling online medicine search and ordering with secure authentication, real-time inventory management, and seamless checkout experience.",
+    image: medicareProject,
+    technologies: ["React.js", "Spring Boot", "MySQL", "JWT"],
+    links: {
+      github: "#",
+      live: "#"
+    }
+  },
+  {
+    title: "MyMoviePlan (Full Stack Movie Management)",
+    description: `A full-stack movie management application with CRUD features. Frontend built in React, backend in Spring Boot. Manage movies, add, edit, delete, and view details`,
+    image: resultAnalyticsProject, // Placeholder, replace with actual image if available
+    technologies: ["React.js", "Spring Boot", "REST API"],
+    links: {
+      github: "",
+      live: ""
+    }
+  },
+  {
     title: "Resume Builder",
     description: "Django-based web app to generate single or bulk resumes from Excel data, with multiple templates and export options. Automates resume creation for individuals and organizations.",
     image: resultAnalyticsProject, // Placeholder, replace with actual image if available
@@ -37,16 +57,7 @@ const projects = [
       live: "https://techfest-naren-18.vercel.app/"
     }
   },
-  {
-    title: "Medicare Platform",
-    description: "Healthcare web application enabling online medicine search and ordering with secure authentication, real-time inventory management, and seamless checkout experience.",
-    image: medicareProject,
-    technologies: ["React.js", "Spring Boot", "MySQL", "JWT"],
-    links: {
-      github: "#",
-      live: "#"
-    }
-  },
+  
   {
     title: "Go4Food Restaurant Portal",
     description: "Real-time food ordering platform connecting restaurants with customers. Features order management dashboard and structured daily reporting system.",
@@ -76,17 +87,8 @@ const projects = [
       github: "https://github.com/Naren-18/Student-Activity-Manager-App",
       live: "#"
     }
-  },
-  {
-    title: "MyMoviePlan (Full Stack Movie Management)",
-    description: `A full-stack movie management application with CRUD features. Frontend built in React, backend in Spring Boot. Manage movies, add, edit, delete, and view details`,
-    image: resultAnalyticsProject, // Placeholder, replace with actual image if available
-    technologies: ["React.js", "Spring Boot", "REST API"],
-    links: {
-      github: "",
-      live: ""
-    }
   }
+  
 ];
 
 const Projects = () => {
