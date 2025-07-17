@@ -8,11 +8,11 @@ import { FaCode } from "react-icons/fa"; // as a fallback for VS Code
 
 const skillCategories = [
   {
-    title: "Programming Languages",
-    icon: Code,
-    color: "from-blue-500/20 to-purple-500/20",
-    iconColor: "text-blue-400",
-    skills: ["Core Java", "JavaScript", "Python", "Dart", "PHP", "SQL"]
+    title: "Frameworks & Libraries",
+    icon: Wrench,
+    color: "from-orange-500/20 to-red-500/20",
+    iconColor: "text-orange-400",
+    skills: ["Spring Boot", "Spring Microservices", "ReactJS", "Flutter", "Django", "Node.js", "Android", "Spring Rest"]
   },
   {
     title: "Databases",
@@ -22,12 +22,13 @@ const skillCategories = [
     skills: ["PostgreSQL", "MySQL", "SQL", "Firebase"]
   },
   {
-    title: "Frameworks & Libraries",
-    icon: Wrench,
-    color: "from-orange-500/20 to-red-500/20",
-    iconColor: "text-orange-400",
-    skills: ["Spring Boot", "Spring Microservices", "ReactJS", "Flutter", "Django", "Node.js", "Android", "Spring Rest"]
+    title: "Programming Languages",
+    icon: Code,
+    color: "from-blue-500/20 to-purple-500/20",
+    iconColor: "text-blue-400",
+    skills: ["Core Java", "JavaScript", "Python", "Dart", "PHP", "SQL"]
   },
+  
   {
     title: "Development Tools",
     icon: Terminal,

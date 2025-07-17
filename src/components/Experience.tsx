@@ -20,20 +20,12 @@ const roles = [
     ]
   },
   {
-    title: "Associate Software Engineer",
+    title: "Associate Engineer",
     period: "October 2023 - May 2025",
     points: [
       "Developed robust backend services with Spring Boot and integrated React-based user interfaces",
       "Managed application deployment and maintenance using AWS cloud infrastructure",
       "Collaborated effectively in Agile teams utilizing Git workflows and monitoring tools"
-    ]
-  },
-  {
-    title: "Technical Trainee",
-    period: "February 2023 - June 2023",
-    points: [
-      "Completed comprehensive training in full-stack development using Spring Boot and React",
-      "Built and deployed practice projects leveraging AWS services and Git version control"
     ]
   }
 ];
