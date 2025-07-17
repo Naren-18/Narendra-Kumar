@@ -15,19 +15,21 @@ const Education = () => {
         
         <Card className="bg-card border-border hover:shadow-card transition-all duration-300 max-w-4xl mx-auto">
           <CardHeader>
-            <div className="flex items-center gap-4 mb-4">
-              <div className="p-3 bg-primary/10 rounded-lg">
-                <GraduationCap className="h-8 w-8 text-primary" />
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
+              <div className="flex flex-row sm:flex-col items-center gap-4 sm:gap-0">
+                <div className="p-3 bg-primary/10 rounded-lg">
+                  <GraduationCap className="h-8 w-8 text-primary" />
+                </div>
               </div>
               <div className="flex-1">
-                <CardTitle className="text-2xl text-primary">
+                <CardTitle className="text-xl sm:text-2xl text-primary">
                   Bachelor of Computer Science and Engineering
                 </CardTitle>
-                <p className="text-xl font-semibold text-foreground mt-1">
+                <p className="text-lg sm:text-xl font-semibold text-foreground mt-1">
                   Malla Reddy College of Engineering and Technology, Hyderabad
                 </p>
               </div>
-              <Badge variant="secondary" className="ml-auto">
+              <Badge variant="secondary" className="ml-0 sm:ml-auto w-fit">
                 <Calendar className="mr-2 h-4 w-4" />
                 2019 - 2023
               </Badge>
