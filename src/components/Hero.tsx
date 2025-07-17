@@ -47,7 +47,7 @@ const Hero = () => {
             </div>
             <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               Passionate about crafting scalable web applications using modern technologies like React, Spring Boot, and cloud platforms. 
-              I turn complex problems into elegant solutions.
+              
             </p>
             
           </div>
