@@ -56,7 +56,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
            
             <Button asChild variant="outline" size="lg" className="text-lg px-8 py-3">
-              <a href="/src/assets/Narendra Kumar.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/Narendra Kumar.pdf" target="_blank" rel="noopener noreferrer">
                 <Download className="mr-2 h-5 w-5" />
                 View My Resume
               </a>

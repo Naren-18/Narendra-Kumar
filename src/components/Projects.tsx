@@ -2,15 +2,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
-import medicareProject from "@/assets/medicare-project.jpg";
-import go4foodProject from "@/assets/go4food-project.jpg";
-import resultAnalyticsProject from "@/assets/result-analytics-project.jpg";
+import go4foodImg from "@/assets/go4food.png";
+import corfusionImg from "@/assets/corfusion.png";
+import resultAnalysisImg from "@/assets/result analysis.png";
+import studentActivityImg from "@/assets/student activity manager.png";
+import techfestImg from "@/assets/techfest.png";
 
 const projects = [
   {
     title: "Medicare Platform",
     description: "Healthcare web application enabling online medicine search and ordering with secure authentication, real-time inventory management, and seamless checkout experience.",
-    image: medicareProject,
+    image: "https://themewagon.com/wp-content/uploads/2021/11/live-doc-1.png", // Healthcare themed
     technologies: ["React.js", "Spring Boot", "MySQL", "JWT"],
     links: {
       github: "#",
@@ -20,7 +22,7 @@ const projects = [
   {
     title: "MyMoviePlan (Full Stack Movie Management)",
     description: `A full-stack movie management application with CRUD features. Frontend built in React, backend in Spring Boot. Manage movies, add, edit, delete, and view details`,
-    image: resultAnalyticsProject, // Placeholder, replace with actual image if available
+    image: "https://user-images.githubusercontent.com/25881325/67157291-7e05dc00-f32a-11e9-8d0e-00e6ecda5b7d.png", // Movie themed
     technologies: ["React.js", "Spring Boot", "REST API"],
     links: {
       github: "",
@@ -30,7 +32,7 @@ const projects = [
   {
     title: "Resume Builder",
     description: "Django-based web app to generate single or bulk resumes from Excel data, with multiple templates and export options. Automates resume creation for individuals and organizations.",
-    image: resultAnalyticsProject, // Placeholder, replace with actual image if available
+    image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80", // Resume themed
     technologies: ["Python", "Django", "Bootstrap", "SQLite/PostgreSQL"],
     links: {
       github: "https://github.com/Naren-18/Resume-Builder",
@@ -40,7 +42,7 @@ const projects = [
   {
     title: "Corfusion Website",
     description: "A modern, responsive business website for IT staffing and consulting, built with HTML, CSS, and JavaScript. Features company info, services, blog, and contact forms.",
-    image: medicareProject, // Placeholder, replace with actual image if available
+    image: corfusionImg, // Placeholder, replace with actual image if available
     technologies: ["HTML", "CSS", "JavaScript"],
     links: {
       github: "https://github.com/Naren-18/corfusion",
@@ -50,7 +52,7 @@ const projects = [
   {
     title: "Techfest Website (ESPIRITO 2K23)",
     description: "A vibrant college fest website for event registration, schedule, and information. Built with HTML, CSS, and JavaScript, it features event listings, registration forms, and a modern UI for students and organizers.",
-    image: go4foodProject, // Placeholder, replace with actual image if available
+    image: techfestImg, // Placeholder, replace with actual image if available
     technologies: ["HTML", "CSS", "JavaScript"],
     links: {
       github: "https://github.com/Naren-18/Techfest",
@@ -61,7 +63,7 @@ const projects = [
   {
     title: "Go4Food Restaurant Portal",
     description: "Real-time food ordering platform connecting restaurants with customers. Features order management dashboard and structured daily reporting system.",
-    image: go4foodProject,
+    image: go4foodImg,
     technologies: ["Python", "Django", "MySQL", "Ajax"],
     links: {
       github: "https://github.com/Naren-18/Go4Food",
@@ -71,7 +73,7 @@ const projects = [
   {
     title: "Academic Result Analytics",
     description: "Data analytics platform for educational institutions to analyze semester results, generate insights, and provide comprehensive reporting for faculty administration.",
-    image: resultAnalyticsProject,
+    image: resultAnalysisImg,
     technologies: ["Django", "Python", "MySQL", "Bootstrap"],
     links: {
       github: "https://github.com/Naren-18/Result-Analyzer",
@@ -81,7 +83,7 @@ const projects = [
   {
     title: "Student Activity Tracker",
     description: "Mobile application for monitoring student attendance with integrated management dashboard for tracking tardiness patterns and generating detailed reports.",
-    image: resultAnalyticsProject,
+    image: studentActivityImg,
     technologies: ["React Native", "Firebase", "Node.js"],
     links: {
       github: "https://github.com/Naren-18/Student-Activity-Manager-App",
