@@ -1,110 +1,181 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Code, Server, Wrench, Users } from 'lucide-react';
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Code, Database, Wrench, Cloud, Zap, Terminal } from "lucide-react";
+import { FaJava, FaPython, FaPhp, FaReact, FaNodeJs, FaAws, FaDocker, FaGithub, FaGitAlt, FaAndroid, FaDatabase } from "react-icons/fa";
+import { SiJavascript, SiDart, SiMysql, SiPostgresql, SiFirebase, SiSpring, SiFlutter, SiVisualstudiocode, SiEclipseide } from "react-icons/si";
+import { MdOutlineDesignServices } from "react-icons/md";
+import { FaCode } from "react-icons/fa"; // as a fallback for VS Code
 
 const skillCategories = [
   {
-    title: 'Frontend',
-    icon: <Code className="w-6 h-6" />,
-    skills: [
-      { name: 'React', level: 90 },
-      { name: 'TypeScript', level: 85 },
-      { name: 'Tailwind CSS', level: 90 },
-      { name: 'Next.js', level: 80 },
-      { name: 'Vue.js', level: 75 },
-    ],
+    title: "Programming Languages",
+    icon: Code,
+    color: "from-blue-500/20 to-purple-500/20",
+    iconColor: "text-blue-400",
+    skills: ["Core Java", "JavaScript", "Python", "Dart", "PHP", "SQL"]
   },
   {
-    title: 'Backend',
-    icon: <Server className="w-6 h-6" />,
-    skills: [
-      { name: 'Node.js', level: 85 },
-      { name: 'Python', level: 80 },
-      { name: 'Java', level: 85 },
-      { name: 'Express.js', level: 85 },
-    ],
+    title: "Databases",
+    icon: Database,
+    color: "from-green-500/20 to-emerald-500/20",
+    iconColor: "text-green-400",
+    skills: ["PostgreSQL", "MySQL", "SQL", "Firebase"]
   },
   {
-    title: 'Tools',
-    icon: <Wrench className="w-6 h-6" />,
-    skills: [
-      { name: 'Git', level: 90 },
-      { name: 'Docker', level: 80 },
-      { name: 'AWS', level: 75 },
-      { name: 'CI/CD', level: 80 },
-      { name: 'Jest', level: 85 },
-    ],
+    title: "Frameworks & Libraries",
+    icon: Wrench,
+    color: "from-orange-500/20 to-red-500/20",
+    iconColor: "text-orange-400",
+    skills: ["Spring Boot", "Spring Microservices", "ReactJS", "Flutter", "Django", "Node.js", "Android", "Spring Rest"]
   },
   {
-    title: 'Soft Skills',
-    icon: <Users className="w-6 h-6" />,
-    skills: [
-      { name: 'Problem Solving', level: 95 },
-      { name: 'Team Leadership', level: 85 },
-      { name: 'Communication', level: 90 },
-      { name: 'Agile', level: 85 },
-      { name: 'Mentoring', level: 80 },
-    ],
+    title: "Development Tools",
+    icon: Terminal,
+    color: "from-purple-500/20 to-pink-500/20",
+    iconColor: "text-purple-400",
+    skills: ["Git", "GitHub", "Visual Studio Code", "Eclipse IDE", "Cursor", "Spring Boot (STS)", "Android Studio"]
   },
+  {
+    title: "Cloud & DevOps",
+    icon: Cloud,
+    color: "from-cyan-500/20 to-blue-500/20",
+    iconColor: "text-cyan-400",
+    skills: ["AWS", "Docker", "Microservices", "REST APIs"]
+  },
+  {
+    title: "Soft Skills",
+    icon: Zap,
+    color: "from-yellow-500/20 to-orange-500/20",
+    iconColor: "text-yellow-400",
+    skills: ["Problem Solving", "Team Collaboration", "Agile Development", "Code Review", "Mentoring"]
+  }
 ];
 
-export default function Skills() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+const skillIcons: Record<string, React.ReactNode> = {
+  "Core Java": <FaJava className="w-4 h-4 mr-2" />, 
+  "JavaScript": <SiJavascript className="w-4 h-4 mr-2" />, 
+  "Python": <FaPython className="w-4 h-4 mr-2" />, 
+  "Dart": <SiDart className="w-4 h-4 mr-2" />, 
+  "PHP": <FaPhp className="w-4 h-4 mr-2" />, 
+  "SQL": <FaDatabase className="w-4 h-4 mr-2" />, 
+  "PostgreSQL": <SiPostgresql className="w-4 h-4 mr-2" />, 
+  "MySQL": <SiMysql className="w-4 h-4 mr-2" />, 
+  "Firebase": <SiFirebase className="w-4 h-4 mr-2" />, 
+  "Spring Boot": <SiSpring className="w-4 h-4 mr-2" />, 
+  "Spring Microservices": <SiSpring className="w-4 h-4 mr-2" />, 
+  "ReactJS": <FaReact className="w-4 h-4 mr-2" />, 
+  "Flutter": <SiFlutter className="w-4 h-4 mr-2" />, 
+  "Django": <MdOutlineDesignServices className="w-4 h-4 mr-2" />, 
+  "Node.js": <FaNodeJs className="w-4 h-4 mr-2" />, 
+  "Android": <FaAndroid className="w-4 h-4 mr-2" />, 
+  "Spring Rest": <SiSpring className="w-4 h-4 mr-2" />, 
+  "Git": <FaGitAlt className="w-4 h-4 mr-2" />, 
+  "GitHub": <FaGithub className="w-4 h-4 mr-2" />, 
+  "Visual Studio Code": <FaCode className="w-4 h-4 mr-2" />, 
+  "Eclipse IDE": <SiEclipseide className="w-4 h-4 mr-2" />, 
+  "Cursor": <MdOutlineDesignServices className="w-4 h-4 mr-2" />, 
+  "Spring Boot (STS)": <SiSpring className="w-4 h-4 mr-2" />, 
+  "Android Studio": <FaAndroid className="w-4 h-4 mr-2" />, 
+  "AWS": <FaAws className="w-4 h-4 mr-2" />, 
+  "Docker": <FaDocker className="w-4 h-4 mr-2" />, 
+  "Microservices": <SiSpring className="w-4 h-4 mr-2" />, 
+  "REST APIs": <FaNodeJs className="w-4 h-4 mr-2" />
+};
 
+const Skills = () => {
   return (
-    <section id="skills" className="py-20 bg-white dark:bg-gray-800">
-      <div className="container mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark text-transparent bg-clip-text"
-        >
-          Skills & Expertise
-        </motion.h2>
-
-        <div ref={ref} className="grid md:grid-cols-2 gap-8">
+    <section className="py-20 px-6">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">Skills & Technologies</h2>
+          <p className="text-xl text-muted-foreground">
+            Technical expertise across the full development stack
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 items-stretch">
           {skillCategories.map((category, index) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg shadow-lg"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-primary-light/10 dark:bg-primary-dark/10 rounded-lg">
-                  {category.icon}
-                </div>
-                <h3 className="text-2xl font-semibold">{category.title}</h3>
-              </div>
-
-              <div className="space-y-4">
-                {category.skills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-1">
-                      <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-sm text-gray-500">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                      <motion.div
-                        className="h-2.5 rounded-full bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark"
-                        initial={{ width: 0 }}
-                        animate={inView ? { width: `${skill.level}%` } : {}}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                      />
+            <Card key={index} className="group bg-card border-border hover:shadow-glow transition-all duration-500 hover:scale-105 relative overflow-hidden h-full flex flex-col">
+              {/* Background Gradient */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+              
+              <CardContent className="p-6 relative z-10 flex flex-col h-full">
+                {/* Icon and Title */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-primary/20 rounded-lg blur-lg group-hover:bg-primary/30 transition-colors"></div>
+                    <div className="relative p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                      <category.icon className={`h-6 w-6 ${category.iconColor} group-hover:text-primary transition-colors`} />
                     </div>
                   </div>
-                ))}
-              </div>
-            </motion.div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
+                      {category.title}
+                    </h3>
+                  </div>
+                </div>
+                
+                {/* Skills Grid - flex-grow to push footer down */}
+                <div className="grid grid-cols-2 gap-3 flex-grow">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div
+                      key={skillIndex}
+                      className="group/skill"
+                    >
+                      <Badge 
+                        variant="secondary" 
+                        className="w-full justify-center py-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default text-xs group-hover:shadow-sm"
+                      >
+                        {skillIcons[skill] || null}
+                        {skill}
+                      </Badge>
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Skill Count - Always at bottom */}
+                <div className="flex items-center justify-between mt-6 pt-4 border-t border-border/50">
+                  <span className="text-sm text-muted-foreground">
+                    {category.skills.length} skills
+                  </span>
+                  <div className="flex space-x-1">
+                    {[...Array(5)].map((_, i) => (
+                      <div 
+                        key={i} 
+                        className={`w-2 h-2 rounded-full ${
+                          i < 4 ? 'bg-primary' : 'bg-muted'
+                        } group-hover:bg-primary transition-colors delay-${i * 100}`}
+                      ></div>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           ))}
+        </div>
+        
+        {/* Summary Stats */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="text-center p-6 rounded-lg bg-gradient-secondary">
+            <div className="text-3xl font-bold text-primary mb-2">15+</div>
+            <div className="text-sm text-muted-foreground">Technologies</div>
+          </div>
+          <div className="text-center p-6 rounded-lg bg-gradient-secondary">
+            <div className="text-3xl font-bold text-primary mb-2">6</div>
+            <div className="text-sm text-muted-foreground">Categories</div>
+          </div>
+          <div className="text-center p-6 rounded-lg bg-gradient-secondary">
+            <div className="text-3xl font-bold text-primary mb-2">2+</div>
+            <div className="text-sm text-muted-foreground">Years Experience</div>
+          </div>
+          <div className="text-center p-6 rounded-lg bg-gradient-secondary">
+            <div className="text-3xl font-bold text-primary mb-2">100%</div>
+            <div className="text-sm text-muted-foreground">Passion</div>
+          </div>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Skills;

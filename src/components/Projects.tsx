@@ -1,114 +1,185 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Github, Globe, Tag } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Github } from "lucide-react";
+import medicareProject from "@/assets/medicare-project.jpg";
+import go4foodProject from "@/assets/go4food-project.jpg";
+import resultAnalyticsProject from "@/assets/result-analytics-project.jpg";
 
 const projects = [
   {
-    title: 'GO4FOOD',
-    description: 'A Django-based food delivery app similar to Zomato or Swiggy, featuring real-time order tracking and restaurant management.',
-    technologies: ['Django', 'Python', 'PostgreSQL', 'Redis', 'Docker'],
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=2000',
-    githubUrl: 'https://github.com/Naren-18/go4food',
+    title: "Resume Builder",
+    description: "Django-based web app to generate single or bulk resumes from Excel data, with multiple templates and export options. Automates resume creation for individuals and organizations.",
+    image: resultAnalyticsProject, // Placeholder, replace with actual image if available
+    technologies: ["Python", "Django", "Bootstrap", "SQLite/PostgreSQL"],
+    links: {
+      github: "https://github.com/Naren-18/Resume-Builder",
+      live: ""
+    }
   },
   {
-    title: 'Result Analyzer',
-    description: 'Python-based web application for analyzing department-wise semester results with data visualization and reporting features.',
-    technologies: ['Python', 'Flask', 'Pandas', 'Chart.js', 'SQLite'],
-    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=2000',
-    githubUrl: 'https://github.com/Naren-18/result-analyzer',
+    title: "Corfusion Website",
+    description: "A modern, responsive business website for IT staffing and consulting, built with HTML, CSS, and JavaScript. Features company info, services, blog, and contact forms.",
+    image: medicareProject, // Placeholder, replace with actual image if available
+    technologies: ["HTML", "CSS", "JavaScript"],
+    links: {
+      github: "https://github.com/Naren-18/corfusion",
+      live: "https://corfusion.com"
+    }
   },
   {
-    title: 'Student Activity Manager',
-    description: 'React Native app and website for tracking latecomers in college, featuring attendance management and reporting.',
-    technologies: ['React Native', 'Node.js', 'MongoDB', 'Express'],
-    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2000',
-    githubUrl: 'https://github.com/Naren-18/student-activity',
+    title: "Techfest Website (ESPIRITO 2K23)",
+    description: "A vibrant college fest website for event registration, schedule, and information. Built with HTML, CSS, and JavaScript, it features event listings, registration forms, and a modern UI for students and organizers.",
+    image: go4foodProject, // Placeholder, replace with actual image if available
+    technologies: ["HTML", "CSS", "JavaScript"],
+    links: {
+      github: "https://github.com/Naren-18/Techfest",
+      live: "https://techfest-naren-18.vercel.app/"
+    }
   },
+  {
+    title: "Medicare Platform",
+    description: "Healthcare web application enabling online medicine search and ordering with secure authentication, real-time inventory management, and seamless checkout experience.",
+    image: medicareProject,
+    technologies: ["React.js", "Spring Boot", "MySQL", "JWT"],
+    links: {
+      github: "#",
+      live: "#"
+    }
+  },
+  {
+    title: "Go4Food Restaurant Portal",
+    description: "Real-time food ordering platform connecting restaurants with customers. Features order management dashboard and structured daily reporting system.",
+    image: go4foodProject,
+    technologies: ["Python", "Django", "MySQL", "Ajax"],
+    links: {
+      github: "https://github.com/Naren-18/Go4Food",
+      live: "#"
+    }
+  },
+  {
+    title: "Academic Result Analytics",
+    description: "Data analytics platform for educational institutions to analyze semester results, generate insights, and provide comprehensive reporting for faculty administration.",
+    image: resultAnalyticsProject,
+    technologies: ["Django", "Python", "MySQL", "Bootstrap"],
+    links: {
+      github: "https://github.com/Naren-18/Result-Analyzer",
+      live: "#"
+    }
+  },
+  {
+    title: "Student Activity Tracker",
+    description: "Mobile application for monitoring student attendance with integrated management dashboard for tracking tardiness patterns and generating detailed reports.",
+    image: resultAnalyticsProject,
+    technologies: ["React Native", "Firebase", "Node.js"],
+    links: {
+      github: "https://github.com/Naren-18/Student-Activity-Manager-App",
+      live: "#"
+    }
+  },
+  {
+    title: "MyMoviePlan (Full Stack Movie Management)",
+    description: `A full-stack movie management application with CRUD features. Frontend built in React, backend in Spring Boot. Manage movies, add, edit, delete, and view details`,
+    image: resultAnalyticsProject, // Placeholder, replace with actual image if available
+    technologies: ["React.js", "Spring Boot", "REST API"],
+    links: {
+      github: "",
+      live: ""
+    }
+  }
 ];
 
-export default function Projects() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
+const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-gray-800">
-      <div className="container mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark text-transparent bg-clip-text"
-        >
-          Featured Projects
-        </motion.h2>
-
-        <div ref={ref} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section className="py-20 px-6 bg-gradient-secondary">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
+          <p className="text-xl text-muted-foreground">
+            Showcasing innovative solutions and technical expertise
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-50 dark:bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={project.image}
+            <Card key={index} className="bg-card border-border hover:shadow-card transition-all duration-300 group overflow-hidden h-full flex flex-col p-3">
+              <div className="relative overflow-hidden">
+                <img 
+                  src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  className="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-105 rounded-md"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm bg-primary-light/10 dark:bg-primary-dark/10 text-primary-dark dark:text-primary-light"
-                    >
-                      <Tag className="w-3 h-3" />
+              
+              <CardHeader className="flex-grow p-2 pb-0">
+                <CardTitle className="text-lg text-primary mb-1">{project.title}</CardTitle>
+                <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
+              </CardHeader>
+              
+              <CardContent className="pt-0 p-2">
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {project.technologies.map((tech, techIndex) => (
+                    <Badge key={techIndex} variant="secondary" className="text-xs px-2 py-1">
                       {tech}
-                    </span>
+                    </Badge>
                   ))}
                 </div>
-
-                <div className="flex gap-4">
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-dark dark:hover:text-primary-light transition-colors"
-                    >
-                      <Github className="w-5 h-5" />
-                      Code
-                    </a>
+                <div className="flex gap-2">
+                  {project.title === "MyMoviePlan (Full Stack Movie Management)" ? (
+                    <>
+                      <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
+                        <a href="https://github.com/Naren-18/MyMoviePlan-FrontEnd" target="_blank" rel="noopener noreferrer">
+                          <Github className="mr-2 h-4 w-4" />
+                          Frontend Code
+                        </a>
+                      </Button>
+                      <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
+                        <a href="https://github.com/Naren-18/MyMoviePlan-Backend" target="_blank" rel="noopener noreferrer">
+                          <Github className="mr-2 h-4 w-4" />
+                          Backend Code
+                        </a>
+                      </Button>
+                    </>
+                  ) : project.title === "Medicare Platform" ? (
+                    <>
+                      <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
+                        <a href="https://github.com/Naren-18/Medicare-FrontEnd" target="_blank" rel="noopener noreferrer">
+                          <Github className="mr-2 h-4 w-4" />
+                          Frontend Code
+                        </a>
+                      </Button>
+                      <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
+                        <a href="https://github.com/Naren-18/Medicare-Backend" target="_blank" rel="noopener noreferrer">
+                          <Github className="mr-2 h-4 w-4" />
+                          Backend Code
+                        </a>
+                      </Button>
+                    </>
+                  ) : (
+                    <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
+                      <a href={project.links.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="mr-2 h-4 w-4" />
+                        Code
+                      </a>
+                    </Button>
                   )}
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-dark dark:hover:text-primary-light transition-colors"
-                    >
-                      <Globe className="w-5 h-5" />
-                      Live Demo
-                    </a>
+                  {project.links.live && project.links.live !== "#" && (
+                    <Button asChild size="sm" className="flex-1 text-xs px-2 py-1">
+                      <a href={project.links.live} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Live Demo
+                      </a>
+                    </Button>
                   )}
                 </div>
-              </div>
-            </motion.div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Projects;
