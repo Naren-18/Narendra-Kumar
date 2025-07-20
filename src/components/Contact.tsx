@@ -30,16 +30,6 @@ const Contact = () => {
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-primary/10 rounded-lg">
-                  <Phone className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <p className="font-medium">Phone</p>
-                  <p className="text-muted-foreground">+91 6304055520</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <div>

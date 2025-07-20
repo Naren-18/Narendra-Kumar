@@ -7,13 +7,46 @@ import corfusionImg from "@/assets/corfusion.png";
 import resultAnalysisImg from "@/assets/result analysis.png";
 import studentActivityImg from "@/assets/student activity manager.png";
 import techfestImg from "@/assets/techfest.png";
+import medicareImg from "@/assets/medicare-project.jpg";
 import { motion } from "framer-motion";
+import codeVistaImg from "@/assets/code vista global.png";
+import valuesoftImg from "@/assets/valuesoft.png";
 
 const projects = [
   {
+    title: "Code Vista Global",
+    description: "A modern study abroad consultancy website built with React and TypeScript. Features university selection, visa guidance, and comprehensive student services with a professional, user-friendly interface.",
+    image: codeVistaImg,
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    links: {
+      github: "https://github.com/Naren-18/Code-Vista-Global",
+      live: "https://www.codevistaglobal.com/"
+    }
+  },
+  {
+    title: "Valuesoft IT Consulting",
+    description: "Professional IT consulting and software development company website. Features services showcase, client testimonials, and contact forms with modern design and responsive layout.",
+    image: valuesoftImg, // IT/consulting themed
+    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    links: {
+      github: "https://github.com/Naren-18/Valuesoft-IT-consulting",
+      live: "https://valuesofttechnologies.com/"
+    }
+  },
+  {
+    title: "Corfusion Website",
+    description: "A modern, responsive business website for IT staffing and consulting, built with HTML, CSS, and JavaScript. Features company info, services, blog, and contact forms.",
+    image: corfusionImg, // Placeholder, replace with actual image if available
+    technologies: ["HTML", "CSS", "JavaScript"],
+    links: {
+      github: "https://github.com/Naren-18/corfusion",
+      live: "https://corfusion.com"
+    }
+  },
+  {
     title: "Medicare Platform",
     description: "Healthcare web application enabling online medicine search and ordering with secure authentication, real-time inventory management, and seamless checkout experience.",
-    image: "https://themewagon.com/wp-content/uploads/2021/11/live-doc-1.png", // Healthcare themed
+    image: medicareImg, // Healthcare themed
     technologies: ["React.js", "Spring Boot", "MySQL", "JWT"],
     links: {
       github: "#",
@@ -40,16 +73,7 @@ const projects = [
       live: ""
     }
   },
-  {
-    title: "Corfusion Website",
-    description: "A modern, responsive business website for IT staffing and consulting, built with HTML, CSS, and JavaScript. Features company info, services, blog, and contact forms.",
-    image: corfusionImg, // Placeholder, replace with actual image if available
-    technologies: ["HTML", "CSS", "JavaScript"],
-    links: {
-      github: "https://github.com/Naren-18/corfusion",
-      live: "https://corfusion.com"
-    }
-  },
+  
   {
     title: "Techfest Website (ESPIRITO 2K23)",
     description: "A vibrant college fest website for event registration, schedule, and information. Built with HTML, CSS, and JavaScript, it features event listings, registration forms, and a modern UI for students and organizers.",
