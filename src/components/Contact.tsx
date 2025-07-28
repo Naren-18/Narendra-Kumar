@@ -4,10 +4,36 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, Linkedin, Github, Send } from "lucide-react";
+import React, { useState } from "react";
 
 const Contact = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <section className="py-20 px-6 bg-gradient-secondary">
+      {/* Modal Overlay */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 animate-fadeIn">
+          <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-2xl p-8 max-w-md w-full text-center relative animate-modalPop">
+            <button
+              className="absolute top-3 right-3 text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200 text-2xl font-bold focus:outline-none"
+              onClick={() => setShowModal(false)}
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <div className="mb-4 text-3xl">😅</div>
+            <h3 className="text-xl font-semibold mb-2 text-zinc-800 dark:text-zinc-100">This developer got carried away building cool projects and forgot to wire up the email form.</h3>
+            <p className="mb-4 text-zinc-600 dark:text-zinc-300">But don’t worry — you can still reach out directly via email:</p>
+            <a
+              href="mailto:vnarendarakumar.work@gmail.com"
+              className="inline-block px-4 py-2 rounded bg-primary text-white font-medium hover:bg-primary/90 transition"
+            >
+              vnarendarakumar.work@gmail.com
+            </a>
+          </div>
+        </div>
+      )}
+      {/* End Modal Overlay */}
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Contact me for collaboration</h2>
@@ -95,7 +121,11 @@ const Contact = () => {
                 />
               </div>
               
-              <Button className="w-full shadow-glow">
+              <Button
+                className="w-full shadow-glow"
+                type="button"
+                onClick={() => setShowModal(true)}
+              >
                 <Send className="mr-2 h-5 w-5" />
                 Send Message
               </Button>
