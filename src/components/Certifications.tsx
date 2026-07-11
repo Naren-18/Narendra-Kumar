@@ -8,6 +8,12 @@ const certifications = [
     organization: "Teksystems Global Services",
     date: "May 2024",
     description: "Recognized as the bing the project."
+  },
+  {
+    title: "SPOT Award",
+    organization: "Teksystems Global Services",
+    date: "June 2026",
+    description: "Recognized for outstanding contribution and dedication to the project."
   }
 ];
 

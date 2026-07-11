@@ -2,41 +2,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
-import go4foodImg from "@/assets/go4food.png";
 import corfusionImg from "@/assets/corfusion.png";
-import resultAnalysisImg from "@/assets/result analysis.png";
-import studentActivityImg from "@/assets/student activity manager.png";
 import techfestImg from "@/assets/techfest.png";
-import medicareImg from "@/assets/medicare-project.jpg";
 import { motion } from "framer-motion";
 import codeVistaImg from "@/assets/code vista global.png";
 import valuesoftImg from "@/assets/valuesoft.png";
 
 const projects = [
-  // {
-  //   title: "Code Vista Global",
-  //   description: "A modern study abroad consultancy website built with React and TypeScript. Features university selection, visa guidance, and comprehensive student services with a professional, user-friendly interface.",
-  //   image: codeVistaImg,
-  //   technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
-  //   links: {
-  //     github: "https://github.com/Naren-18/Code-Vista-Global",
-  //     live: "https://www.codevistaglobal.com/"
-  //   }
-  // },
-  // {
-  //   title: "Valuesoft IT Consulting",
-  //   description: "Professional IT consulting and software development company website. Features services showcase, client testimonials, and contact forms with modern design and responsive layout.",
-  //   image: valuesoftImg, // IT/consulting themed
-  //   technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-  //   links: {
-  //     github: "https://github.com/Naren-18/Valuesoft-IT-consulting",
-  //     live: "https://valuesofttechnologies.com/"
-  //   }
-  // },
   {
     title: "Corfusion Website",
     description: "A modern, responsive business website for IT staffing and consulting, built with HTML, CSS, and JavaScript. Features company info, services, blog, and contact forms.",
-    image: corfusionImg, // Placeholder, replace with actual image if available
+    image: corfusionImg,
     technologies: ["HTML", "CSS", "JavaScript"],
     links: {
       github: "https://github.com/Naren-18/corfusion",
@@ -44,78 +20,75 @@ const projects = [
     }
   },
   {
-    title: "Medicare Platform",
-    description: "Healthcare web application enabling online medicine search and ordering with secure authentication, real-time inventory management, and seamless checkout experience.",
-    image: medicareImg, // Healthcare themed
-    technologies: ["React.js", "Spring Boot", "MySQL", "JWT"],
-    links: {
-      github: "#",
-      live: "#"
-    }
-  },
-  {
-    title: "MyMoviePlan (Full Stack Movie Management)",
-    description: `A full-stack movie management application with CRUD features. Frontend built in React, backend in Spring Boot. Manage movies, add, edit, delete, and view details`,
-    image: "https://user-images.githubusercontent.com/25881325/67157291-7e05dc00-f32a-11e9-8d0e-00e6ecda5b7d.png", // Movie themed
-    technologies: ["React.js", "Spring Boot", "REST API"],
-    links: {
-      github: "",
-      live: ""
-    }
-  },
-  {
-    title: "Resume Builder",
-    description: "Django-based web app to generate single or bulk resumes from Excel data, with multiple templates and export options. Automates resume creation for individuals and organizations.",
-    image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80", // Resume themed
-    technologies: ["Python", "Django", "Bootstrap", "SQLite/PostgreSQL"],
-    links: {
-      github: "https://github.com/Naren-18/Resume-Builder",
-      live: ""
-    }
-  },
-  
-  {
     title: "Techfest Website (ESPIRITO 2K23)",
     description: "A vibrant college fest website for event registration, schedule, and information. Built with HTML, CSS, and JavaScript, it features event listings, registration forms, and a modern UI for students and organizers.",
-    image: techfestImg, // Placeholder, replace with actual image if available
+    image: techfestImg,
     technologies: ["HTML", "CSS", "JavaScript"],
     links: {
       github: "https://github.com/Naren-18/Techfest",
-      live: "https://techfest-naren-18.vercel.app/"
-    }
-  },
-  
-  {
-    title: "Go4Food Restaurant Portal",
-    description: "Real-time food ordering platform connecting restaurants with customers. Features order management dashboard and structured daily reporting system.",
-    image: go4foodImg,
-    technologies: ["Python", "Django", "MySQL", "Ajax"],
-    links: {
-      github: "https://github.com/Naren-18/Go4Food",
-      live: "#"
+      live: "https://techfest-teal-eta.vercel.app/"
     }
   },
   {
-    title: "Academic Result Analytics",
-    description: "Data analytics platform for educational institutions to analyze semester results, generate insights, and provide comprehensive reporting for faculty administration.",
-    image: resultAnalysisImg,
-    technologies: ["Django", "Python", "MySQL", "Bootstrap"],
+    title: "Code Vista Global",
+    description: "A study abroad consultancy website serving as a gateway to international education, guiding students through university selection, visa assistance, and end-to-end admission support with a clean, modern interface.",
+    image: codeVistaImg,
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     links: {
-      github: "https://github.com/Naren-18/Result-Analyzer",
-      live: "#"
+      github: "https://github.com/Naren-18/Code-Vista-Global",
+      live: "https://www.codevistaglobal.com/"
     }
   },
   {
-    title: "Student Activity Tracker",
-    description: "Mobile application for monitoring student attendance with integrated management dashboard for tracking tardiness patterns and generating detailed reports.",
-    image: studentActivityImg,
-    technologies: ["React Native", "Firebase", "Node.js"],
+    title: "CoreNova AI LLC",
+    description: "IT consulting company website showcasing SAP, Oracle, Machine Learning, Generative AI, and DevOps solutions, helping organizations drive efficiency, innovation, and digital transformation.",
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     links: {
-      github: "https://github.com/Naren-18/Student-Activity-Manager-App",
-      live: "#"
+      github: "https://github.com/Naren-18/CoreNova-Ai-LLC",
+      live: "https://www.corenovaai.com/"
+    }
+  },
+  {
+    title: "HungryDuck",
+    description: "End-to-end hospitality solutions website for a firm that designs, builds, launches, and maintains world-class hotels, restaurants, nightclubs, and resorts.",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    links: {
+      github: "https://github.com/Naren-18/HungryDuck",
+      live: "https://www.hungryduck.in/"
+    }
+  },
+  {
+    title: "Quantum Forge Consulting",
+    description: "IT staffing and consulting company website highlighting permanent placement, contract staffing, remote hiring, and IT consulting services that help businesses scale with the right technology and talent.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80",
+    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    links: {
+      github: "https://github.com/Naren-18/Quantum-Forge-Consulting",
+      live: "https://www.quantumforgeconsulting.com/"
+    }
+  },
+  {
+    title: "Nexa Vertex",
+    description: "Consulting and staffing solutions website connecting skilled professionals with top employers, offering career counseling, resume building, interview preparation, and recruitment services.",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=80",
+    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    links: {
+      github: "https://github.com/Naren-18/Nexa-Vertex",
+      live: "https://nexavertex.com/"
+    }
+  },
+  {
+    title: "Valuesoft IT Consulting",
+    description: "Professional IT consulting company website offering custom software development, cloud computing, AI & data analytics, mobile/web app development, cybersecurity, and IT support services.",
+    image: valuesoftImg,
+    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    links: {
+      github: "https://github.com/Naren-18/Valuesoft-IT-consulting",
+      live: "https://valuesofttechnologies.com/"
     }
   }
-  
 ];
 
 const Projects = () => {
@@ -168,44 +141,12 @@ const Projects = () => {
                     ))}
                   </div>
                   <div className="flex gap-2">
-                    {project.title === "MyMoviePlan (Full Stack Movie Management)" ? (
-                      <>
-                        <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
-                          <a href="https://github.com/Naren-18/MyMoviePlan-FrontEnd" target="_blank" rel="noopener noreferrer">
-                            <Github className="mr-2 h-4 w-4" />
-                            Frontend Code
-                          </a>
-                        </Button>
-                        <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
-                          <a href="https://github.com/Naren-18/MyMoviePlan-Backend" target="_blank" rel="noopener noreferrer">
-                            <Github className="mr-2 h-4 w-4" />
-                            Backend Code
-                          </a>
-                        </Button>
-                      </>
-                    ) : project.title === "Medicare Platform" ? (
-                      <>
-                        <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
-                          <a href="https://github.com/Naren-18/Medicare-FrontEnd" target="_blank" rel="noopener noreferrer">
-                            <Github className="mr-2 h-4 w-4" />
-                            Frontend Code
-                          </a>
-                        </Button>
-                        <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
-                          <a href="https://github.com/Naren-18/Medicare-Backend" target="_blank" rel="noopener noreferrer">
-                            <Github className="mr-2 h-4 w-4" />
-                            Backend Code
-                          </a>
-                        </Button>
-                      </>
-                    ) : (
-                      <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
-                        <a href={project.links.github} target="_blank" rel="noopener noreferrer">
-                          <Github className="mr-2 h-4 w-4" />
-                          Code
-                        </a>
-                      </Button>
-                    )}
+                    <Button asChild variant="outline" size="sm" className="flex-1 text-xs px-2 py-1">
+                      <a href={project.links.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="mr-2 h-4 w-4" />
+                        Code
+                      </a>
+                    </Button>
                     {project.links.live && project.links.live !== "#" && (
                       <Button asChild size="sm" className="flex-1 text-xs px-2 py-1">
                         <a href={project.links.live} target="_blank" rel="noopener noreferrer">
