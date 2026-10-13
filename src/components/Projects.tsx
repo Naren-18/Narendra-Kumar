@@ -7,6 +7,7 @@ import techfestImg from "@/assets/techfest.png";
 import { motion } from "framer-motion";
 import codeVistaImg from "@/assets/code vista global.png";
 import valuesoftImg from "@/assets/valuesoft.png";
+import FeaturedProject from "@/components/FeaturedProject";
 
 const projects = [
   {
@@ -107,7 +108,9 @@ const Projects = () => {
             Showcasing innovative solutions and technical expertise
           </p>
         </div>
-        
+
+        <FeaturedProject />
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <motion.div
