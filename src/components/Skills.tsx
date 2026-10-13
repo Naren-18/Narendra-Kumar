@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code, Database, Wrench, Cloud, Zap, Terminal } from "lucide-react";
 import { FaJava, FaPython, FaPhp, FaReact, FaNodeJs, FaAws, FaDocker, FaGithub, FaGitAlt, FaAndroid, FaDatabase } from "react-icons/fa";
-import { SiJavascript, SiDart, SiMysql, SiPostgresql, SiFirebase, SiSpring, SiFlutter, SiVisualstudiocode, SiEclipseide } from "react-icons/si";
+import { SiJavascript, SiDart, SiMysql, SiPostgresql, SiFirebase, SiSpring, SiFlutter, SiVisualstudiocode, SiEclipseide, SiRedis, SiApachekafka, SiGithubactions, SiVercel } from "react-icons/si";
 import { MdOutlineDesignServices } from "react-icons/md";
 import { FaCode } from "react-icons/fa"; // as a fallback for VS Code
 import { motion } from "framer-motion";
@@ -13,14 +13,14 @@ const skillCategories = [
     icon: Wrench,
     color: "from-orange-500/20 to-red-500/20",
     iconColor: "text-orange-400",
-    skills: ["Spring Boot", "Spring Microservices", "ReactJS", "Flutter", "Django", "Node.js", "Android", "Spring Rest"]
+    skills: ["Spring Boot", "Spring Microservices", "Spring Cloud", "Spring Security", "ReactJS", "Flutter", "Django", "Node.js", "Android", "Spring Rest"]
   },
   {
     title: "Databases",
     icon: Database,
     color: "from-green-500/20 to-emerald-500/20",
     iconColor: "text-green-400",
-    skills: ["PostgreSQL", "MySQL", "SQL", "Firebase"]
+    skills: ["PostgreSQL", "MySQL", "SQL", "Redis", "Firebase"]
   },
   {
     title: "Programming Languages",
@@ -42,7 +42,7 @@ const skillCategories = [
     icon: Cloud,
     color: "from-cyan-500/20 to-blue-500/20",
     iconColor: "text-cyan-400",
-    skills: ["AWS", "Docker", "Microservices", "REST APIs"]
+    skills: ["AWS", "Docker", "Microservices", "REST APIs", "Apache Kafka", "GitHub Actions", "Vercel"]
   },
   {
     title: "Soft Skills",
@@ -81,7 +81,13 @@ const skillIcons: Record<string, React.ReactNode> = {
   "AWS": <FaAws className="w-4 h-4 mr-2" />, 
   "Docker": <FaDocker className="w-4 h-4 mr-2" />, 
   "Microservices": <SiSpring className="w-4 h-4 mr-2" />, 
-  "REST APIs": <FaNodeJs className="w-4 h-4 mr-2" />
+  "REST APIs": <FaNodeJs className="w-4 h-4 mr-2" />,
+  "Spring Cloud": <SiSpring className="w-4 h-4 mr-2" />,
+  "Spring Security": <SiSpring className="w-4 h-4 mr-2" />,
+  "Redis": <SiRedis className="w-4 h-4 mr-2" />,
+  "Apache Kafka": <SiApachekafka className="w-4 h-4 mr-2" />,
+  "GitHub Actions": <SiGithubactions className="w-4 h-4 mr-2" />,
+  "Vercel": <SiVercel className="w-4 h-4 mr-2" />
 };
 
 const Skills = () => {
@@ -173,7 +179,7 @@ const Skills = () => {
         {/* Summary Stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
           <div className="text-center p-6 rounded-lg bg-gradient-secondary">
-            <div className="text-3xl font-bold text-primary mb-2">15+</div>
+            <div className="text-3xl font-bold text-primary mb-2">20+</div>
             <div className="text-sm text-muted-foreground">Technologies</div>
           </div>
           <div className="text-center p-6 rounded-lg bg-gradient-secondary">
