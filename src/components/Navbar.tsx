@@ -7,8 +7,9 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home", href: "#home" },
+    { name: "Services", href: "#services" },
     { name: "Projects", href: "#projects" },
-    { name: "Skills", href: "#skills" },
+    { name: "Tech Stack", href: "#skills" },
     { name: "Experience", href: "#experience" },
     { name: "Education", href: "#education" },
     { name: "Contact", href: "#contact" },
@@ -34,8 +35,11 @@ const Navbar = () => {
                 {item.name}
               </a>
             ))}
+            <Button asChild size="sm">
+              <a href="#contact">Hire Me</a>
+            </Button>
           </div>
-          
+
           {/* Mobile menu button */}
           <Button
             variant="ghost"
@@ -61,6 +65,9 @@ const Navbar = () => {
                   {item.name}
                 </a>
               ))}
+              <Button asChild size="sm" className="w-full">
+                <a href="#contact" onClick={() => setIsMenuOpen(false)}>Hire Me</a>
+              </Button>
             </div>
           </div>
         )}
