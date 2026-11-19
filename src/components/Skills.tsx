@@ -1,202 +1,102 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Code, Database, Wrench, Cloud, Zap, Terminal } from "lucide-react";
-import { FaJava, FaPython, FaPhp, FaReact, FaNodeJs, FaAws, FaDocker, FaGithub, FaGitAlt, FaAndroid, FaDatabase } from "react-icons/fa";
-import { SiJavascript, SiDart, SiMysql, SiPostgresql, SiFirebase, SiSpring, SiFlutter, SiVisualstudiocode, SiEclipseide, SiRedis, SiApachekafka, SiGithubactions, SiVercel } from "react-icons/si";
-import { MdOutlineDesignServices } from "react-icons/md";
-import { FaCode } from "react-icons/fa"; // as a fallback for VS Code
+import type { ReactNode } from "react";
+import { FaJava, FaReact, FaNodeJs, FaAws, FaDocker, FaPython } from "react-icons/fa";
+import {
+  SiTypescript,
+  SiTailwindcss,
+  SiFlutter,
+  SiSpring,
+  SiMysql,
+  SiPostgresql,
+  SiFirebase,
+  SiRedis,
+  SiApachekafka,
+  SiGithubactions,
+  SiVercel,
+  SiDjango,
+} from "react-icons/si";
 import { motion } from "framer-motion";
 
-const skillCategories = [
-  {
-    title: "Frameworks & Libraries",
-    icon: Wrench,
-    color: "from-orange-500/20 to-red-500/20",
-    iconColor: "text-orange-400",
-    skills: ["Spring Boot", "Spring Microservices", "Spring Cloud", "Spring Security", "ReactJS", "Flutter", "Django", "Node.js", "Android", "Spring Rest"]
-  },
-  {
-    title: "Databases",
-    icon: Database,
-    color: "from-green-500/20 to-emerald-500/20",
-    iconColor: "text-green-400",
-    skills: ["PostgreSQL", "MySQL", "SQL", "Redis", "Firebase"]
-  },
-  {
-    title: "Programming Languages",
-    icon: Code,
-    color: "from-blue-500/20 to-purple-500/20",
-    iconColor: "text-blue-400",
-    skills: ["Core Java", "JavaScript", "Python", "Dart", "PHP", "SQL"]
-  },
-  
-  {
-    title: "Development Tools",
-    icon: Terminal,
-    color: "from-purple-500/20 to-pink-500/20",
-    iconColor: "text-purple-400",
-    skills: ["Git", "GitHub", "Visual Studio Code", "Eclipse IDE", "Cursor", "Spring Boot (STS)", "Android Studio"]
-  },
-  {
-    title: "Cloud & DevOps",
-    icon: Cloud,
-    color: "from-cyan-500/20 to-blue-500/20",
-    iconColor: "text-cyan-400",
-    skills: ["AWS", "Docker", "Microservices", "REST APIs", "Apache Kafka", "GitHub Actions", "Vercel"]
-  },
-  {
-    title: "Soft Skills",
-    icon: Zap,
-    color: "from-yellow-500/20 to-orange-500/20",
-    iconColor: "text-yellow-400",
-    skills: ["Problem Solving", "Team Collaboration", "Agile Development", "Code Review", "Mentoring"]
-  }
-];
+type Tech = { name: string; icon: ReactNode };
 
-const skillIcons: Record<string, React.ReactNode> = {
-  "Core Java": <FaJava className="w-4 h-4 mr-2" />, 
-  "JavaScript": <SiJavascript className="w-4 h-4 mr-2" />, 
-  "Python": <FaPython className="w-4 h-4 mr-2" />, 
-  "Dart": <SiDart className="w-4 h-4 mr-2" />, 
-  "PHP": <FaPhp className="w-4 h-4 mr-2" />, 
-  "SQL": <FaDatabase className="w-4 h-4 mr-2" />, 
-  "PostgreSQL": <SiPostgresql className="w-4 h-4 mr-2" />, 
-  "MySQL": <SiMysql className="w-4 h-4 mr-2" />, 
-  "Firebase": <SiFirebase className="w-4 h-4 mr-2" />, 
-  "Spring Boot": <SiSpring className="w-4 h-4 mr-2" />, 
-  "Spring Microservices": <SiSpring className="w-4 h-4 mr-2" />, 
-  "ReactJS": <FaReact className="w-4 h-4 mr-2" />, 
-  "Flutter": <SiFlutter className="w-4 h-4 mr-2" />, 
-  "Django": <MdOutlineDesignServices className="w-4 h-4 mr-2" />, 
-  "Node.js": <FaNodeJs className="w-4 h-4 mr-2" />, 
-  "Android": <FaAndroid className="w-4 h-4 mr-2" />, 
-  "Spring Rest": <SiSpring className="w-4 h-4 mr-2" />, 
-  "Git": <FaGitAlt className="w-4 h-4 mr-2" />, 
-  "GitHub": <FaGithub className="w-4 h-4 mr-2" />, 
-  "Visual Studio Code": <FaCode className="w-4 h-4 mr-2" />, 
-  "Eclipse IDE": <SiEclipseide className="w-4 h-4 mr-2" />, 
-  "Cursor": <MdOutlineDesignServices className="w-4 h-4 mr-2" />, 
-  "Spring Boot (STS)": <SiSpring className="w-4 h-4 mr-2" />, 
-  "Android Studio": <FaAndroid className="w-4 h-4 mr-2" />, 
-  "AWS": <FaAws className="w-4 h-4 mr-2" />, 
-  "Docker": <FaDocker className="w-4 h-4 mr-2" />, 
-  "Microservices": <SiSpring className="w-4 h-4 mr-2" />, 
-  "REST APIs": <FaNodeJs className="w-4 h-4 mr-2" />,
-  "Spring Cloud": <SiSpring className="w-4 h-4 mr-2" />,
-  "Spring Security": <SiSpring className="w-4 h-4 mr-2" />,
-  "Redis": <SiRedis className="w-4 h-4 mr-2" />,
-  "Apache Kafka": <SiApachekafka className="w-4 h-4 mr-2" />,
-  "GitHub Actions": <SiGithubactions className="w-4 h-4 mr-2" />,
-  "Vercel": <SiVercel className="w-4 h-4 mr-2" />
-};
+const groups: { label: string; items: Tech[] }[] = [
+  {
+    label: "Frontend & Mobile",
+    items: [
+      { name: "React", icon: <FaReact /> },
+      { name: "TypeScript", icon: <SiTypescript /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+      { name: "Flutter", icon: <SiFlutter /> },
+    ],
+  },
+  {
+    label: "Backend",
+    items: [
+      { name: "Java", icon: <FaJava /> },
+      { name: "Spring Boot", icon: <SiSpring /> },
+      { name: "Node.js", icon: <FaNodeJs /> },
+      { name: "Python / Django", icon: <SiDjango /> },
+    ],
+  },
+  {
+    label: "Data & Messaging",
+    items: [
+      { name: "PostgreSQL", icon: <SiPostgresql /> },
+      { name: "MySQL", icon: <SiMysql /> },
+      { name: "Redis", icon: <SiRedis /> },
+      { name: "Kafka", icon: <SiApachekafka /> },
+      { name: "Firebase", icon: <SiFirebase /> },
+    ],
+  },
+  {
+    label: "Cloud & DevOps",
+    items: [
+      { name: "AWS", icon: <FaAws /> },
+      { name: "Docker", icon: <FaDocker /> },
+      { name: "GitHub Actions", icon: <SiGithubactions /> },
+      { name: "Vercel", icon: <SiVercel /> },
+    ],
+  },
+];
 
 const Skills = () => {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
-      viewport={{ once: true }}
-      className="py-20 px-6"
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Skills & Technologies</h2>
-          <p className="text-xl text-muted-foreground">
-            Technical expertise across the full development stack
+    <section className="py-16 px-6">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="max-w-5xl mx-auto"
+      >
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">Tech Stack</h2>
+          <p className="text-muted-foreground">
+            Proven, modern tools — chosen to fit your project, not the other way around.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 items-stretch">
-          {skillCategories.map((category, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <Card className="group bg-card border-border hover:shadow-glow transition-all duration-500 hover:scale-105 relative overflow-hidden h-full flex flex-col">
-                {/* Background Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                
-                <CardContent className="p-6 relative z-10 flex flex-col h-full">
-                  {/* Icon and Title */}
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-primary/20 rounded-lg blur-lg group-hover:bg-primary/30 transition-colors"></div>
-                      <div className="relative p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                        <category.icon className={`h-6 w-6 ${category.iconColor} group-hover:text-primary transition-colors`} />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
-                        {category.title}
-                      </h3>
-                    </div>
-                  </div>
-                  
-                  {/* Skills Grid - flex-grow to push footer down */}
-                  <div className="grid grid-cols-2 gap-3 flex-grow">
-                    {category.skills.map((skill, skillIndex) => (
-                      <div
-                        key={skillIndex}
-                        className="group/skill"
-                      >
-                        <Badge 
-                          variant="secondary" 
-                          className="w-full justify-center py-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default text-xs group-hover:shadow-sm"
-                        >
-                          {skillIcons[skill] || null}
-                          {skill}
-                        </Badge>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  {/* Skill Count - Always at bottom */}
-                  <div className="flex items-center justify-between mt-6 pt-4 border-t border-border/50">
-                    <span className="text-sm text-muted-foreground">
-                      {category.skills.length} skills
-                    </span>
-                    <div className="flex space-x-1">
-                      {[...Array(5)].map((_, i) => (
-                        <div 
-                          key={i} 
-                          className={`w-2 h-2 rounded-full ${
-                            i < 4 ? 'bg-primary' : 'bg-muted'
-                          } group-hover:bg-primary transition-colors delay-${i * 100}`}
-                        ></div>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
+
+        <div className="rounded-2xl border border-border bg-card divide-y divide-border">
+          {groups.map((g) => (
+            <div key={g.label} className="flex flex-col md:flex-row md:items-center gap-3 md:gap-6 p-5">
+              <div className="md:w-44 shrink-0 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                {g.label}
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {g.items.map((t) => (
+                  <span
+                    key={t.name}
+                    className="inline-flex items-center gap-2 rounded-md border border-border bg-secondary/60 px-3 py-1.5 text-sm hover:border-primary/50 hover:text-primary transition-colors [&>svg]:h-4 [&>svg]:w-4"
+                  >
+                    {t.icon}
+                    {t.name}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
-        
-        {/* Summary Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="text-center p-6 rounded-lg bg-gradient-secondary">
-            <div className="text-3xl font-bold text-primary mb-2">20+</div>
-            <div className="text-sm text-muted-foreground">Technologies</div>
-          </div>
-          <div className="text-center p-6 rounded-lg bg-gradient-secondary">
-            <div className="text-3xl font-bold text-primary mb-2">6</div>
-            <div className="text-sm text-muted-foreground">Categories</div>
-          </div>
-          <div className="text-center p-6 rounded-lg bg-gradient-secondary">
-            <div className="text-3xl font-bold text-primary mb-2">2+</div>
-            <div className="text-sm text-muted-foreground">Years Experience</div>
-          </div>
-          <div className="text-center p-6 rounded-lg bg-gradient-secondary">
-            <div className="text-3xl font-bold text-primary mb-2">100%</div>
-            <div className="text-sm text-muted-foreground">Passion</div>
-          </div>
-        </div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 };
 
