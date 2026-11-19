@@ -103,9 +103,9 @@ const Projects = () => {
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
+          <h2 className="text-4xl font-bold mb-4">Work That’s Live</h2>
           <p className="text-xl text-muted-foreground">
-            Showcasing innovative solutions and technical expertise
+            From complex production systems to business websites — all deployed and in use
           </p>
         </div>
 
