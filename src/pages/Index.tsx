@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import Skills from "@/components/Skills";
+import Services from "@/components/Services";
 import Projects from "@/components/Projects";
 import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
@@ -14,6 +15,9 @@ const Index = () => {
       <main>
         <section id="home">
           <Hero />
+        </section>
+        <section id="services">
+          <Services />
         </section>
         <section id="projects">
           <Projects />
